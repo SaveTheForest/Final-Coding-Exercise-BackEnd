@@ -1,5 +1,5 @@
 from conexaoDB import *
-
+from Aluno import Aluno
 class Curso:
     def __init__(self, codigo, nome, duracao):
         self.codigo = codigo
@@ -26,6 +26,7 @@ class Curso:
 
     def consultar(self):
         objetoBD = ConexaoDB()
+
 
 
 

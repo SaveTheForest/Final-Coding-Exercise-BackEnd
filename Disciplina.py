@@ -15,13 +15,13 @@ class Disciplina:
         sql += f"values ('{self.codigo}','{self.nome}','{self.cargahoraria}')"
         c.executarDML(sql)
 
-    def alterar(self, nome, codigo):
+    def alterar(nome, codigo):
         c = ConexaoDB()
         sql = f"update disciplina "
         sql += f"set nome ='{nome}' where codigo='{codigo}'"
         c.executarDML(sql)
 
-    def excluir(self, codigo):
+    def excluir(codigo):
         c = ConexaoDB()
         sql = f"delete from disciplina where codigo='{codigo}'"
         c.executarDML(sql)
