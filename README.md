@@ -17,3 +17,6 @@ nome, endereço, telefone, CPF e salário.
 
  - Desenvolver o diagrama de classes (relações, atributos e métodos)
  - Criar o banco de dados e mostrar vinculação (criar, alterar, editar e excluir)
+ # Diagrama de Classes:
+ <img style="margin: 5px" alt="home" src="https://raw.githubusercontent.com/SaveTheForest/Final-Coding-Exercise-BackEnd/main/Diagrama%20de%20Classes.png" 
+  width="1000">
