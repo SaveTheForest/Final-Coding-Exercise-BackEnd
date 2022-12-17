@@ -1,7 +1,7 @@
 from Disciplina import Disciplina
 from Professor import Professor
 from conexaoDB import ConexaoDB
-from Funcionario import Funcionario
+from TecAdm import TecAdm
 from Aluno import Aluno
 from Curso import Curso
 
@@ -16,23 +16,23 @@ while handleWhile:
     if handleOption == 1:
         select = int(
             input(
-                "Deseja cadastrar um 1-Aluno, 2-Professor, 3-Curso ou 4-Disciplina?: "
+                "Deseja cadastrar um 1-Aluno, 2-Funcionario, 3-Curso ou 4-Disciplina?: "
             )
         )
     if handleOption == 2:
         select = int(
             input(
-                "Deseja Vizualizar um 1-Aluno, 2-Professor, 3-Curso ou 4-Disciplina?: "
+                "Deseja Vizualizar um 1-Aluno, 2-Funcionario, 3-Curso ou 4-Disciplina?: "
             )
         )
     if handleOption == 3:
         select = int(
-            input("Deseja Deletar um 1-Aluno, 2-Professor, 3-Curso ou 4-Disciplina?: ")
+            input("Deseja Deletar um 1-Aluno, 2-Funcionario, 3-Curso ou 4-Disciplina?: ")
         )
     if handleOption == 4:
         select = int(
             input(
-                "Deseja realizar um update em um 1-Aluno, 2-Professor, 3-Curso ou 4-Disciplina?: "
+                "Deseja realizar um update em um 1-Aluno, 2-Funcionario, 3-Curso ou 4-Disciplina?: "
             )
         )
     if handleOption == 5:
@@ -72,7 +72,7 @@ while handleWhile:
         openDataBase.conectar()
         professor = Professor
         tecOrProf = int(input("Deseja cadastrar um 1-Professor ou um 2-Tecnico?: "))
-        funcionario = Funcionario
+        tecadm = TecAdm
         if tecOrProf == 1:
             if handleOption == 1:
                 nome = input("Digite o nome do professor: ")
@@ -103,25 +103,25 @@ while handleWhile:
 
         if tecOrProf == 2:
             if handleOption == 1:
-                nome = input("Digite o nome do funcionario: ")
+                nome = input("Digite o nome do Tecnico: ")
                 endereco = input("Digite seu endereco: ")
                 telefone = input("Digite o seu telefone: ")
                 cpf = input("Digite seu cpf: ")
                 salario = input("Digite seu salario: ")
-                funcionario = Funcionario(nome, endereco, telefone, cpf, salario)
-                funcionario.cadastrar()
+                tecadm = TecAdm(nome, endereco, telefone, cpf, salario)
+                tecadm.cadastrar()
             if handleOption == 2:
-                openDataBase.executarDQL("select * from funcionario")
-                funcionario.consultar
+                openDataBase.executarDQL("select * from tecadm")
+                tecadm.consultar
             if handleOption == 3:
                 cpfDelete = input("Digite o cpf do tecnico que deseja deletar:")
-                funcionario.excluir(cpfDelete)
+                tecadm.excluir(cpfDelete)
             if handleOption == 4:
                 cpfUpdate = input(
-                    "Digite o cpf do funcionario que deseja realizar o update: "
+                    "Digite o cpf do Tecnico que deseja realizar o update: "
                 )
-                nomeUpdate = input("Digite o novo nome do aluno: ")
-                funcionario.alterar(nomeUpdate, cpfUpdate)
+                nomeUpdate = input("Digite o novo nome do Tecnico: ")
+                tecadm.alterar(nomeUpdate, cpfUpdate)
     if select == 3:
         
         openDataBase = ConexaoDB()

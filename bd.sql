@@ -9,7 +9,7 @@ CREATE TABLE aluno (
     curso VARCHAR(20),
     PRIMARY KEY (id)
 );
-CREATE TABLE funcionario (
+CREATE TABLE tecadm (
     id INT(4) AUTO_INCREMENT,
     nome VARCHAR(50) NOT NULL,
     endereco VARCHAR(100),
